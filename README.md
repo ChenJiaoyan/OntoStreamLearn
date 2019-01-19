@@ -17,4 +17,4 @@ Air quality and meteology data (download by https://goo.gl/UXEw9C):
 Air data and meteorology data are separatedly exported to files with "mongodump -d db_name -o dir" command. You can use "mongorestore -d db_name -o dir/*" commend to separatedly import them into Mongo DB.
 
 
-Please contact Jiaoyan Chen for any questions or interests.
+The codes have been out of maintenance. Please contact Jiaoyan Chen for any questions or interests.
