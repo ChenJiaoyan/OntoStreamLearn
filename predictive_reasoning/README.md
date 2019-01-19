@@ -1,18 +1,26 @@
-This package contains the code and data for the paper - Predictive Reasoning for Time-series Forecasting. To run the code, you need the following softwares installed:
+This package contains the code and data for the air quality forecasting context of the paper - "Learning from ontology streams with semantic concept drift". 
+To run the code, you need the following softwares installed:
 
 Java devlopment environment:
+
     1. Oracle JDK 1.7 (Other versions may also be OK, but are not tested.)
+
     2. Eclipse 4.4.2 (with Maven)
 
 Database: Mongo DB 3.0.1
 
 Python: 2.7
+
 sklearn:
 
-Data:
+Data (download by https://goo.gl/UXEw9C):
+
     1. Air quality data are stored in DB:Air, Collection:Stations
+
     2. Meteorology data are stored in DB:forecastio, Collection:Beijing 
+
     3. Information of the stations: station_location.csv
+
 Air data and meteorology data are separatedly exported to files with "mongodump -d db_name -o dir" command. You can use "mongorestore -d db_name -o dir/*" commend to separatedly import them into Mongo DB.
 
 Protege Desktop: 5.0.0
