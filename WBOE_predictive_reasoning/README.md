@@ -1,4 +1,4 @@
-Experiment codes for air quality level forecasting for the paper "Concept Drift in Ontology Streams? Embedding Semantics with Representation Learning", which is an extension of IJCAI-17 paper.
+Experiment codes for air quality level forecasting for the paper "Concept Drift in Ontology Streams? Embedding Semantics with Representation Learning", which is an extension of IJCAI-17 paper "Learning from ontology streams with semantic concept drift".
 
 
 Following two stations are forecasted:
