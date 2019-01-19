@@ -8,4 +8,4 @@ This space contains some codes and data for our work on ontology stream reasonin
 
 Air quality and meteology data can be downloaded by https://goo.gl/UXEw9C
 
-Please contact Jiaoyan Chen for any problems or interests.
+Please contact Jiaoyan Chen for any questions or interests.
