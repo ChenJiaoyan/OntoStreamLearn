@@ -7,3 +7,5 @@ This space contains some codes and data for our work on ontology stream reasonin
 2. KBPA_StockPrediction/: "Deep Learning for Knowledge-Driven Ontology Stream Prediction." (CCKS-18), Deng, Shumin, Jeff Z. Pan, Jiaoyan Chen, and Huajun Chen.
 
 Air quality and meteology data can be downloaded by https://goo.gl/UXEw9C
+
+Please contact Jiaoyan Chen for any problems or interests.
