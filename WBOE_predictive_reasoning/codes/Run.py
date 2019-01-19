@@ -18,7 +18,7 @@ import BagOfEntailments
 t_start = datetime.strptime('2013-05-22T09:00:00Z', '%Y-%m-%dT%H:%M:%SZ')
 t_end = datetime.strptime('2015-02-04T14:00:00Z', '%Y-%m-%dT%H:%M:%SZ')
 
-DIR = '../Samples2'
+DIR = '../samples'
 
 
 def mete_summary_2_float(summary):
