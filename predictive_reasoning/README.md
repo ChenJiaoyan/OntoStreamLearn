@@ -25,7 +25,7 @@ Air data and meteorology data are separatedly exported to files with "mongodump 
 
 Protege Desktop: 5.0.0
 
-    smog.owl is in dir "smog_forecast".
+    smog.owl is in dir "smog_ontology".
 
 
 The whole program contains two parts: 1)java program: map data to assertions, reason, calculate consistence coefficient, and extract samples; 2)python program: ML model training and testing
