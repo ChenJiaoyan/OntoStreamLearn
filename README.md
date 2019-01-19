@@ -3,8 +3,9 @@ This space contains some codes and data for our work on ontology stream reasonin
 
 1. predictive_reasoning/: "Learning from ontology streams with semantic concept drift" (IJCAI-17), Chen, Jiaoyan, Freddy Lécué, Jeff Pan, and Huajun Chen. 
 
-
 2. KBPA_StockPrediction/: "Deep Learning for Knowledge-Driven Ontology Stream Prediction." (CCKS-18), Deng, Shumin, Jeff Z. Pan, Jiaoyan Chen, and Huajun Chen.
+
+3. WBOE_predictive_reasoning/: "Concept Drift in Ontology Streams? Embedding Semantics for Representation Learning" (Journal of Web Semantics, 2019),  Chen, Jiaoyan, Freddy Lécué, Jeff Pan, Chen Huajun and Deng, Shumin (under revision).
 
 Air quality and meteology data (download by https://goo.gl/UXEw9C):
 
@@ -17,4 +18,4 @@ Air quality and meteology data (download by https://goo.gl/UXEw9C):
 Air data and meteorology data are separatedly exported to files with "mongodump -d db_name -o dir" command. You can use "mongorestore -d db_name -o dir/*" commend to separatedly import them into Mongo DB.
 
 
-Please contact Jiaoyan Chen for any questions or interests.
+The codes have been out of maintenance. Please contact Jiaoyan Chen for any questions or interests.
