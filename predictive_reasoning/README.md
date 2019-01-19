@@ -28,9 +28,13 @@ Protege Desktop: 5.0.0
     smog.owl is in dir "smog_ontology".
 
 
-The whole program contains two parts: 1)java program: map data to assertions, reason, calculate consistence coefficient, and extract samples; 2)python program: ML model training and testing
+The whole program contains two parts: 
 
-You can check the java program by importing "smog_forecast" into eclipse. Jar packages can be managed by maven. You can set the parameters of input/output in DataConfig.java. It includes four steps (main function). They should be excuted one by one. They are Job0_entailment.java, Job1_correlation.java, Job2_NormalSamples.java, Job3_ConsistentSamples.jar. There are comments for details in each file. Especially, Job0_entailment.java is quite coupled with the ontology and application. You can run reasoning with Job0 and Job1 (identified by reason_id), and then run Job2 and Job3 for samples (identified by exp_id) independently, so that you can reuse the results of Job0 and Job1.
+1. smog_ontology/: ontology construction, and reasoning
+
+2. smog_learning/: machine learning, prediction and experiments
+
+You can check the java program by importing "smog_ontology" into eclipse. Jar packages can be managed by maven. You can set the parameters of input/output in DataConfig.java. It includes four steps (main function). They should be excuted one by one. They are Job0_entailment.java, Job1_correlation.java, Job2_NormalSamples.java, Job3_ConsistentSamples.jar. There are comments for details in each file. Especially, Job0_entailment.java is quite coupled with the ontology and application. You can run reasoning with Job0 and Job1 (identified by reason_id), and then run Job2 and Job3 for samples (identified by exp_id) independently, so that you can reuse the results of Job0 and Job1.
 
 The python_code mainly contains the following files:
 
