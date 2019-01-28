@@ -1,0 +1,1620 @@
+@prefix : <http://www.semanticweb.org/apple/ontologies/2015/8/untitled-ontology-16#> .
+@prefix owl: <http://www.w3.org/2002/07/owl#> .
+@prefix rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#> .
+@prefix xml: <http://www.w3.org/XML/1998/namespace> .
+@prefix xsd: <http://www.w3.org/2001/XMLSchema#> .
+@prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#> .
+@base <http://www.semanticweb.org/apple/ontologies/2015/8/untitled-ontology-16> .
+
+<http://www.semanticweb.org/apple/ontologies/2015/8/untitled-ontology-16> rdf:type owl:Ontology ;
+                                                                          
+                                                                          rdfs:comment "This ontology aims at modeling spatio-temporal smog evolution" .
+
+
+#################################################################
+#
+#    Object Properties
+#
+#################################################################
+
+
+###  http://www.semanticweb.org/apple/ontologies/2015/8/untitled-ontology-16#hasAir
+
+:hasAir rdf:type owl:FunctionalProperty ,
+                 owl:ObjectProperty ;
+        
+        rdfs:range :Air .
+
+
+
+###  http://www.semanticweb.org/apple/ontologies/2015/8/untitled-ontology-16#hasArea
+
+:hasArea rdf:type owl:ObjectProperty ;
+         
+         rdfs:range :Area ;
+         
+         rdfs:domain :Station .
+
+
+
+###  http://www.semanticweb.org/apple/ontologies/2015/8/untitled-ontology-16#hasDayOfWeek
+
+:hasDayOfWeek rdf:type owl:ObjectProperty ;
+              
+              rdfs:range :DayOfWeek .
+
+
+
+###  http://www.semanticweb.org/apple/ontologies/2015/8/untitled-ontology-16#hasHourOfDay
+
+:hasHourOfDay rdf:type owl:ObjectProperty ;
+              
+              rdfs:range :HourOfDay .
+
+
+
+###  http://www.semanticweb.org/apple/ontologies/2015/8/untitled-ontology-16#hasMeteorology
+
+:hasMeteorology rdf:type owl:FunctionalProperty ,
+                         owl:ObjectProperty ;
+                
+                rdfs:range :Meteorology ;
+                
+                rdfs:domain :Snapshot .
+
+
+
+###  http://www.semanticweb.org/apple/ontologies/2015/8/untitled-ontology-16#hasNeighbourObservation
+
+:hasNeighbourObservation rdf:type owl:InverseFunctionalProperty ,
+                                  owl:ObjectProperty ;
+                         
+                         rdfs:domain :Snapshot .
+
+
+
+###  http://www.semanticweb.org/apple/ontologies/2015/8/untitled-ontology-16#hasObservatedStation
+
+:hasObservatedStation rdf:type owl:ObjectProperty .
+
+
+
+###  http://www.semanticweb.org/apple/ontologies/2015/8/untitled-ontology-16#hasWeatherType
+
+:hasWeatherType rdf:type owl:ObjectProperty ;
+                
+                rdfs:domain :Meteorology ;
+                
+                rdfs:range :WeatherType .
+
+
+
+###  http://www.semanticweb.org/apple/ontologies/2015/8/untitled-ontology-16#hasWind
+
+:hasWind rdf:type owl:FunctionalProperty ,
+                  owl:ObjectProperty ;
+         
+         rdfs:domain :Meteorology ;
+         
+         rdfs:range :Wind .
+
+
+
+
+
+#################################################################
+#
+#    Data properties
+#
+#################################################################
+
+
+###  http://www.semanticweb.org/apple/ontologies/2015/8/untitled-ontology-16#hasAQIValue
+
+:hasAQIValue rdf:type owl:DatatypeProperty ;
+             
+             rdfs:domain :Air ;
+             
+             rdfs:range xsd:int .
+
+
+
+###  http://www.semanticweb.org/apple/ontologies/2015/8/untitled-ontology-16#hasCOValue
+
+:hasCOValue rdf:type owl:DatatypeProperty ;
+            
+            rdfs:domain :Air ;
+            
+            rdfs:range xsd:float .
+
+
+
+###  http://www.semanticweb.org/apple/ontologies/2015/8/untitled-ontology-16#hasCityValue
+
+:hasCityValue rdf:type owl:DatatypeProperty ;
+              
+              rdfs:domain :Station ;
+              
+              rdfs:range xsd:string .
+
+
+
+###  http://www.semanticweb.org/apple/ontologies/2015/8/untitled-ontology-16#hasCloudCoverValue
+
+:hasCloudCoverValue rdf:type owl:DatatypeProperty ;
+                    
+                    rdfs:domain :Meteorology ;
+                    
+                    rdfs:range xsd:float .
+
+
+
+###  http://www.semanticweb.org/apple/ontologies/2015/8/untitled-ontology-16#hasDayValue
+
+:hasDayValue rdf:type owl:DatatypeProperty ;
+             
+             rdfs:domain :DayOfWeek ;
+             
+             rdfs:range xsd:int .
+
+
+
+###  http://www.semanticweb.org/apple/ontologies/2015/8/untitled-ontology-16#hasDirectionValue
+
+:hasDirectionValue rdf:type owl:DatatypeProperty ;
+                   
+                   rdfs:range xsd:int .
+
+
+
+###  http://www.semanticweb.org/apple/ontologies/2015/8/untitled-ontology-16#hasDistanceValue
+
+:hasDistanceValue rdf:type owl:DatatypeProperty ;
+                  
+                  rdfs:range xsd:int .
+
+
+
+###  http://www.semanticweb.org/apple/ontologies/2015/8/untitled-ontology-16#hasHourValue
+
+:hasHourValue rdf:type owl:DatatypeProperty ;
+              
+              rdfs:domain :HourOfDay ;
+              
+              rdfs:range xsd:int .
+
+
+
+###  http://www.semanticweb.org/apple/ontologies/2015/8/untitled-ontology-16#hasHumidityValue
+
+:hasHumidityValue rdf:type owl:DatatypeProperty ;
+                  
+                  rdfs:domain :Meteorology ;
+                  
+                  rdfs:range xsd:float .
+
+
+
+###  http://www.semanticweb.org/apple/ontologies/2015/8/untitled-ontology-16#hasLatValue
+
+:hasLatValue rdf:type owl:DatatypeProperty ;
+             
+             rdfs:domain :Station ;
+             
+             rdfs:range xsd:float .
+
+
+
+###  http://www.semanticweb.org/apple/ontologies/2015/8/untitled-ontology-16#hasLonValue
+
+:hasLonValue rdf:type owl:DatatypeProperty ;
+             
+             rdfs:domain :Station ;
+             
+             rdfs:range xsd:float .
+
+
+
+###  http://www.semanticweb.org/apple/ontologies/2015/8/untitled-ontology-16#hasNO2Value
+
+:hasNO2Value rdf:type owl:DatatypeProperty ;
+             
+             rdfs:domain :Air ;
+             
+             rdfs:range xsd:int .
+
+
+
+###  http://www.semanticweb.org/apple/ontologies/2015/8/untitled-ontology-16#hasNameValue
+
+:hasNameValue rdf:type owl:DatatypeProperty ;
+              
+              rdfs:domain :Station ;
+              
+              rdfs:range xsd:string .
+
+
+
+###  http://www.semanticweb.org/apple/ontologies/2015/8/untitled-ontology-16#hasO3Value
+
+:hasO3Value rdf:type owl:DatatypeProperty ;
+            
+            rdfs:domain :Air ;
+            
+            rdfs:range xsd:int .
+
+
+
+###  http://www.semanticweb.org/apple/ontologies/2015/8/untitled-ontology-16#hasObservedTime
+
+:hasObservedTime rdf:type owl:DatatypeProperty ;
+                 
+                 rdfs:domain :Snapshot ;
+                 
+                 rdfs:range xsd:dateTime .
+
+
+
+###  http://www.semanticweb.org/apple/ontologies/2015/8/untitled-ontology-16#hasPM10Value
+
+:hasPM10Value rdf:type owl:DatatypeProperty ;
+              
+              rdfs:domain :Air ;
+              
+              rdfs:range xsd:int .
+
+
+
+###  http://www.semanticweb.org/apple/ontologies/2015/8/untitled-ontology-16#hasPM25Value
+
+:hasPM25Value rdf:type owl:DatatypeProperty ;
+              
+              rdfs:domain :Air ;
+              
+              rdfs:range xsd:int .
+
+
+
+###  http://www.semanticweb.org/apple/ontologies/2015/8/untitled-ontology-16#hasPrecipitationValue
+
+:hasPrecipitationValue rdf:type owl:DatatypeProperty ;
+                       
+                       rdfs:domain :Meteorology ;
+                       
+                       rdfs:range xsd:float .
+
+
+
+###  http://www.semanticweb.org/apple/ontologies/2015/8/untitled-ontology-16#hasPressureValue
+
+:hasPressureValue rdf:type owl:DatatypeProperty ;
+                  
+                  rdfs:domain :Meteorology ;
+                  
+                  rdfs:range xsd:float .
+
+
+
+###  http://www.semanticweb.org/apple/ontologies/2015/8/untitled-ontology-16#hasPrimaryPollutantValue
+
+:hasPrimaryPollutantValue rdf:type owl:DatatypeProperty ;
+                          
+                          rdfs:domain :Air ;
+                          
+                          rdfs:range xsd:string .
+
+
+
+###  http://www.semanticweb.org/apple/ontologies/2015/8/untitled-ontology-16#hasSO2Value
+
+:hasSO2Value rdf:type owl:DatatypeProperty ;
+             
+             rdfs:domain :Air ;
+             
+             rdfs:range xsd:int .
+
+
+
+###  http://www.semanticweb.org/apple/ontologies/2015/8/untitled-ontology-16#hasTemperatureValue
+
+:hasTemperatureValue rdf:type owl:DatatypeProperty ;
+                     
+                     rdfs:domain :Meteorology ;
+                     
+                     rdfs:range xsd:float .
+
+
+
+###  http://www.semanticweb.org/apple/ontologies/2015/8/untitled-ontology-16#hasVisibilityValue
+
+:hasVisibilityValue rdf:type owl:DatatypeProperty ;
+                    
+                    rdfs:domain :Meteorology ;
+                    
+                    rdfs:range xsd:float .
+
+
+
+###  http://www.semanticweb.org/apple/ontologies/2015/8/untitled-ontology-16#hasWeatherDescriptionValue
+
+:hasWeatherDescriptionValue rdf:type owl:DatatypeProperty ;
+                            
+                            rdfs:domain :WeatherType ;
+                            
+                            rdfs:range xsd:string .
+
+
+
+###  http://www.semanticweb.org/apple/ontologies/2015/8/untitled-ontology-16#hasWindDirectionValue
+
+:hasWindDirectionValue rdf:type owl:DatatypeProperty ;
+                       
+                       rdfs:domain :Wind ;
+                       
+                       rdfs:range xsd:int .
+
+
+
+###  http://www.semanticweb.org/apple/ontologies/2015/8/untitled-ontology-16#hasWindSpeedValue
+
+:hasWindSpeedValue rdf:type owl:DatatypeProperty ;
+                   
+                   rdfs:domain :Wind ;
+                   
+                   rdfs:range xsd:float .
+
+
+
+
+
+#################################################################
+#
+#    Classes
+#
+#################################################################
+
+
+###  http://www.semanticweb.org/apple/ontologies/2015/8/untitled-ontology-16#Air
+
+:Air rdf:type owl:Class ;
+     
+     rdfs:subClassOf [ rdf:type owl:Restriction ;
+                       owl:onProperty :hasAQIValue ;
+                       owl:qualifiedCardinality "1"^^xsd:nonNegativeInteger ;
+                       owl:onDataRange xsd:int
+                     ] .
+
+
+
+###  http://www.semanticweb.org/apple/ontologies/2015/8/untitled-ontology-16#Area
+
+:Area rdf:type owl:Class ;
+      
+      owl:equivalentClass [ rdf:type owl:Class ;
+                            owl:oneOf ( :Shijingshan
+                                        :Tongzhou
+                                        :Yanqing
+                                        :Fengtai
+                                        :Huairou
+                                        :Shunyi
+                                        :Daxing
+                                        :Mentougou
+                                        :Changping
+                                        :Fangshan
+                                        :Chaoyang
+                                        :Haidian
+                                        :Pinggu
+                                        :Miyun
+                                      )
+                          ] .
+
+
+
+###  http://www.semanticweb.org/apple/ontologies/2015/8/untitled-ontology-16#Breezy
+
+:Breezy rdf:type owl:Class ;
+        
+        owl:equivalentClass [ rdf:type owl:Class ;
+                              owl:intersectionOf ( :WeatherType
+                                                   [ rdf:type owl:Restriction ;
+                                                     owl:onProperty :hasWeatherDescriptionValue ;
+                                                     owl:someValuesFrom [ rdf:type rdfs:Datatype ;
+                                                                          owl:oneOf [ rdf:type rdf:List ;
+                                                                                      rdf:first "Breezy" ;
+                                                                                      rdf:rest rdf:nil
+                                                                                    ]
+                                                                        ]
+                                                   ]
+                                                 )
+                            ] .
+
+
+
+###  http://www.semanticweb.org/apple/ontologies/2015/8/untitled-ontology-16#Calm
+
+:Calm rdf:type owl:Class ;
+      
+      owl:equivalentClass [ rdf:type owl:Class ;
+                            owl:intersectionOf ( :Wind
+                                                 [ rdf:type owl:Restriction ;
+                                                   owl:onProperty :hasWindSpeedValue ;
+                                                   owl:qualifiedCardinality "1"^^xsd:nonNegativeInteger ;
+                                                   owl:onDataRange [ rdf:type rdfs:Datatype ;
+                                                                     owl:onDatatype xsd:float ;
+                                                                     owl:withRestrictions ( [ xsd:maxExclusive "1.1"^^xsd:float
+                                                                                            ]
+                                                                                          )
+                                                                   ]
+                                                 ]
+                                               )
+                          ] .
+
+
+
+###  http://www.semanticweb.org/apple/ontologies/2015/8/untitled-ontology-16#Clear
+
+:Clear rdf:type owl:Class ;
+       
+       owl:equivalentClass [ rdf:type owl:Class ;
+                             owl:intersectionOf ( :WeatherType
+                                                  [ rdf:type owl:Restriction ;
+                                                    owl:onProperty :hasWeatherDescriptionValue ;
+                                                    owl:someValuesFrom [ rdf:type rdfs:Datatype ;
+                                                                         owl:oneOf [ rdf:type rdf:List ;
+                                                                                     rdf:first "Clear" ;
+                                                                                     rdf:rest rdf:nil
+                                                                                   ]
+                                                                       ]
+                                                  ]
+                                                )
+                           ] .
+
+
+
+###  http://www.semanticweb.org/apple/ontologies/2015/8/untitled-ontology-16#DayOfWeek
+
+:DayOfWeek rdf:type owl:Class ;
+           
+           owl:equivalentClass [ rdf:type owl:Restriction ;
+                                 owl:onProperty :hasDayValue ;
+                                 owl:qualifiedCardinality "1"^^xsd:nonNegativeInteger ;
+                                 owl:onDataRange xsd:int
+                               ] .
+
+
+
+###  http://www.semanticweb.org/apple/ontologies/2015/8/untitled-ontology-16#Dry
+
+:Dry rdf:type owl:Class ;
+     
+     owl:equivalentClass [ rdf:type owl:Class ;
+                           owl:intersectionOf ( :WeatherType
+                                                [ rdf:type owl:Restriction ;
+                                                  owl:onProperty :hasWeatherDescriptionValue ;
+                                                  owl:someValuesFrom [ rdf:type rdfs:Datatype ;
+                                                                       owl:oneOf [ rdf:type rdf:List ;
+                                                                                   rdf:first "Dry" ;
+                                                                                   rdf:rest rdf:nil
+                                                                                 ]
+                                                                     ]
+                                                ]
+                                              )
+                         ] .
+
+
+
+###  http://www.semanticweb.org/apple/ontologies/2015/8/untitled-ontology-16#Emergent
+
+:Emergent rdf:type owl:Class ;
+          
+          owl:equivalentClass [ rdf:type owl:Class ;
+                                owl:intersectionOf ( :Air
+                                                     [ rdf:type owl:Restriction ;
+                                                       owl:onProperty :hasAQIValue ;
+                                                       owl:qualifiedCardinality "1"^^xsd:nonNegativeInteger ;
+                                                       owl:onDataRange [ rdf:type rdfs:Datatype ;
+                                                                         owl:onDatatype xsd:int ;
+                                                                         owl:withRestrictions ( [ xsd:minExclusive "300"^^xsd:int
+                                                                                                ]
+                                                                                              )
+                                                                       ]
+                                                     ]
+                                                   )
+                              ] .
+
+
+
+###  http://www.semanticweb.org/apple/ontologies/2015/8/untitled-ontology-16#EveningRushHour
+
+:EveningRushHour rdf:type owl:Class ;
+                 
+                 owl:equivalentClass [ rdf:type owl:Class ;
+                                       owl:intersectionOf ( :HourOfDay
+                                                            [ rdf:type owl:Restriction ;
+                                                              owl:onProperty :hasHourValue ;
+                                                              owl:qualifiedCardinality "1"^^xsd:nonNegativeInteger ;
+                                                              owl:onDataRange [ rdf:type rdfs:Datatype ;
+                                                                                owl:intersectionOf ( [ rdf:type rdfs:Datatype ;
+                                                                                                       owl:onDatatype xsd:int ;
+                                                                                                       owl:withRestrictions ( [ xsd:minInclusive "17"^^xsd:int
+                                                                                                                              ]
+                                                                                                                            )
+                                                                                                     ]
+                                                                                                     [ rdf:type rdfs:Datatype ;
+                                                                                                       owl:onDatatype xsd:int ;
+                                                                                                       owl:withRestrictions ( [ xsd:maxExclusive "20"^^xsd:int
+                                                                                                                              ]
+                                                                                                                            )
+                                                                                                     ]
+                                                                                                   )
+                                                                              ]
+                                                            ]
+                                                          )
+                                     ] .
+
+
+
+###  http://www.semanticweb.org/apple/ontologies/2015/8/untitled-ontology-16#Foggy
+
+:Foggy rdf:type owl:Class ;
+       
+       owl:equivalentClass [ rdf:type owl:Class ;
+                             owl:intersectionOf ( :WeatherType
+                                                  [ rdf:type owl:Restriction ;
+                                                    owl:onProperty :hasWeatherDescriptionValue ;
+                                                    owl:someValuesFrom [ rdf:type rdfs:Datatype ;
+                                                                         owl:oneOf [ rdf:type rdf:List ;
+                                                                                     rdf:first "Foggy" ;
+                                                                                     rdf:rest rdf:nil
+                                                                                   ]
+                                                                       ]
+                                                  ]
+                                                )
+                           ] .
+
+
+
+###  http://www.semanticweb.org/apple/ontologies/2015/8/untitled-ontology-16#FreshBreeze
+
+:FreshBreeze rdf:type owl:Class ;
+             
+             owl:equivalentClass [ rdf:type owl:Class ;
+                                   owl:intersectionOf ( :Wind
+                                                        [ rdf:type owl:Restriction ;
+                                                          owl:onProperty :hasWindSpeedValue ;
+                                                          owl:qualifiedCardinality "1"^^xsd:nonNegativeInteger ;
+                                                          owl:onDataRange [ rdf:type rdfs:Datatype ;
+                                                                            owl:intersectionOf ( [ rdf:type rdfs:Datatype ;
+                                                                                                   owl:onDatatype xsd:float ;
+                                                                                                   owl:withRestrictions ( [ xsd:minInclusive "28.7"^^xsd:float
+                                                                                                                          ]
+                                                                                                                        )
+                                                                                                 ]
+                                                                                                 [ rdf:type rdfs:Datatype ;
+                                                                                                   owl:onDatatype xsd:float ;
+                                                                                                   owl:withRestrictions ( [ xsd:maxExclusive "38.8"^^xsd:float
+                                                                                                                          ]
+                                                                                                                        )
+                                                                                                 ]
+                                                                                               )
+                                                                          ]
+                                                        ]
+                                                      )
+                                 ] .
+
+
+
+###  http://www.semanticweb.org/apple/ontologies/2015/8/untitled-ontology-16#Gale
+
+:Gale rdf:type owl:Class ;
+      
+      owl:equivalentClass [ rdf:type owl:Class ;
+                            owl:intersectionOf ( :Wind
+                                                 [ rdf:type owl:Restriction ;
+                                                   owl:onProperty :hasWindSpeedValue ;
+                                                   owl:qualifiedCardinality "1"^^xsd:nonNegativeInteger ;
+                                                   owl:onDataRange [ rdf:type rdfs:Datatype ;
+                                                                     owl:intersectionOf ( [ rdf:type rdfs:Datatype ;
+                                                                                            owl:onDatatype xsd:float ;
+                                                                                            owl:withRestrictions ( [ xsd:minInclusive "61.8"^^xsd:float
+                                                                                                                   ]
+                                                                                                                 )
+                                                                                          ]
+                                                                                          [ rdf:type rdfs:Datatype ;
+                                                                                            owl:onDatatype xsd:float ;
+                                                                                            owl:withRestrictions ( [ xsd:maxExclusive "74.6"^^xsd:float
+                                                                                                                   ]
+                                                                                                                 )
+                                                                                          ]
+                                                                                        )
+                                                                   ]
+                                                 ]
+                                               )
+                          ] .
+
+
+
+###  http://www.semanticweb.org/apple/ontologies/2015/8/untitled-ontology-16#GentleBreeze
+
+:GentleBreeze rdf:type owl:Class ;
+              
+              owl:equivalentClass [ rdf:type owl:Class ;
+                                    owl:intersectionOf ( :Wind
+                                                         [ rdf:type owl:Restriction ;
+                                                           owl:onProperty :hasWindSpeedValue ;
+                                                           owl:qualifiedCardinality "1"^^xsd:nonNegativeInteger ;
+                                                           owl:onDataRange [ rdf:type rdfs:Datatype ;
+                                                                             owl:intersectionOf ( [ rdf:type rdfs:Datatype ;
+                                                                                                    owl:onDatatype xsd:float ;
+                                                                                                    owl:withRestrictions ( [ xsd:minInclusive "11.9"^^xsd:float
+                                                                                                                           ]
+                                                                                                                         )
+                                                                                                  ]
+                                                                                                  [ rdf:type rdfs:Datatype ;
+                                                                                                    owl:onDatatype xsd:float ;
+                                                                                                    owl:withRestrictions ( [ xsd:maxExclusive "19.7"^^xsd:float
+                                                                                                                           ]
+                                                                                                                         )
+                                                                                                  ]
+                                                                                                )
+                                                                           ]
+                                                         ]
+                                                       )
+                                  ] .
+
+
+
+###  http://www.semanticweb.org/apple/ontologies/2015/8/untitled-ontology-16#Good
+
+:Good rdf:type owl:Class ;
+      
+      owl:equivalentClass [ rdf:type owl:Class ;
+                            owl:intersectionOf ( :Air
+                                                 [ rdf:type owl:Restriction ;
+                                                   owl:onProperty :hasAQIValue ;
+                                                   owl:qualifiedCardinality "1"^^xsd:nonNegativeInteger ;
+                                                   owl:onDataRange [ rdf:type rdfs:Datatype ;
+                                                                     owl:intersectionOf ( [ rdf:type rdfs:Datatype ;
+                                                                                            owl:onDatatype xsd:int ;
+                                                                                            owl:withRestrictions ( [ xsd:minInclusive "0"^^xsd:int
+                                                                                                                   ]
+                                                                                                                 )
+                                                                                          ]
+                                                                                          [ rdf:type rdfs:Datatype ;
+                                                                                            owl:onDatatype xsd:int ;
+                                                                                            owl:withRestrictions ( [ xsd:maxInclusive "50"^^xsd:int
+                                                                                                                   ]
+                                                                                                                 )
+                                                                                          ]
+                                                                                        )
+                                                                   ]
+                                                 ]
+                                               )
+                          ] .
+
+
+
+###  http://www.semanticweb.org/apple/ontologies/2015/8/untitled-ontology-16#Hazardous
+
+:Hazardous rdf:type owl:Class ;
+           
+           owl:equivalentClass [ rdf:type owl:Class ;
+                                 owl:intersectionOf ( :Air
+                                                      [ rdf:type owl:Restriction ;
+                                                        owl:onProperty :hasAQIValue ;
+                                                        owl:qualifiedCardinality "1"^^xsd:nonNegativeInteger ;
+                                                        owl:onDataRange [ rdf:type rdfs:Datatype ;
+                                                                          owl:intersectionOf ( [ rdf:type rdfs:Datatype ;
+                                                                                                 owl:onDatatype xsd:int ;
+                                                                                                 owl:withRestrictions ( [ xsd:minExclusive "200"^^xsd:int
+                                                                                                                        ]
+                                                                                                                      )
+                                                                                               ]
+                                                                                               [ rdf:type rdfs:Datatype ;
+                                                                                                 owl:onDatatype xsd:int ;
+                                                                                                 owl:withRestrictions ( [ xsd:maxInclusive "300"^^xsd:int
+                                                                                                                        ]
+                                                                                                                      )
+                                                                                               ]
+                                                                                             )
+                                                                        ]
+                                                      ]
+                                                    )
+                               ] .
+
+
+
+###  http://www.semanticweb.org/apple/ontologies/2015/8/untitled-ontology-16#HighWind
+
+:HighWind rdf:type owl:Class ;
+          
+          owl:equivalentClass [ rdf:type owl:Class ;
+                                owl:intersectionOf ( :Wind
+                                                     [ rdf:type owl:Restriction ;
+                                                       owl:onProperty :hasWindSpeedValue ;
+                                                       owl:qualifiedCardinality "1"^^xsd:nonNegativeInteger ;
+                                                       owl:onDataRange [ rdf:type rdfs:Datatype ;
+                                                                         owl:intersectionOf ( [ rdf:type rdfs:Datatype ;
+                                                                                                owl:onDatatype xsd:float ;
+                                                                                                owl:withRestrictions ( [ xsd:minInclusive "49.9"^^xsd:float
+                                                                                                                       ]
+                                                                                                                     )
+                                                                                              ]
+                                                                                              [ rdf:type rdfs:Datatype ;
+                                                                                                owl:onDatatype xsd:float ;
+                                                                                                owl:withRestrictions ( [ xsd:maxExclusive "61.8"^^xsd:float
+                                                                                                                       ]
+                                                                                                                     )
+                                                                                              ]
+                                                                                            )
+                                                                       ]
+                                                     ]
+                                                   )
+                              ] .
+
+
+
+###  http://www.semanticweb.org/apple/ontologies/2015/8/untitled-ontology-16#HourOfDay
+
+:HourOfDay rdf:type owl:Class ;
+           
+           owl:equivalentClass [ rdf:type owl:Restriction ;
+                                 owl:onProperty :hasHourValue ;
+                                 owl:qualifiedCardinality "1"^^xsd:nonNegativeInteger ;
+                                 owl:onDataRange [ rdf:type rdfs:Datatype ;
+                                                   owl:intersectionOf ( [ rdf:type rdfs:Datatype ;
+                                                                          owl:onDatatype xsd:int ;
+                                                                          owl:withRestrictions ( [ xsd:minInclusive "0"^^xsd:int
+                                                                                                 ]
+                                                                                               )
+                                                                        ]
+                                                                        [ rdf:type rdfs:Datatype ;
+                                                                          owl:onDatatype xsd:int ;
+                                                                          owl:withRestrictions ( [ xsd:maxExclusive "24"^^xsd:int
+                                                                                                 ]
+                                                                                               )
+                                                                        ]
+                                                                      )
+                                                 ]
+                               ] .
+
+
+
+###  http://www.semanticweb.org/apple/ontologies/2015/8/untitled-ontology-16#Humid
+
+:Humid rdf:type owl:Class ;
+       
+       owl:equivalentClass [ rdf:type owl:Class ;
+                             owl:intersectionOf ( :WeatherType
+                                                  [ rdf:type owl:Restriction ;
+                                                    owl:onProperty :hasWeatherDescriptionValue ;
+                                                    owl:someValuesFrom [ rdf:type rdfs:Datatype ;
+                                                                         owl:oneOf [ rdf:type rdf:List ;
+                                                                                     rdf:first "Humid" ;
+                                                                                     rdf:rest rdf:nil
+                                                                                   ]
+                                                                       ]
+                                                  ]
+                                                )
+                           ] .
+
+
+
+###  http://www.semanticweb.org/apple/ontologies/2015/8/untitled-ontology-16#HurrianceForce
+
+:HurrianceForce rdf:type owl:Class ;
+                
+                owl:equivalentClass [ rdf:type owl:Class ;
+                                      owl:intersectionOf ( :Wind
+                                                           [ rdf:type owl:Restriction ;
+                                                             owl:onProperty :hasWindSpeedValue ;
+                                                             owl:qualifiedCardinality "1"^^xsd:nonNegativeInteger ;
+                                                             owl:onDataRange [ rdf:type rdfs:Datatype ;
+                                                                               owl:onDatatype xsd:float ;
+                                                                               owl:withRestrictions ( [ xsd:minInclusive "117.4"^^xsd:float
+                                                                                                      ]
+                                                                                                    )
+                                                                             ]
+                                                           ]
+                                                         )
+                                    ] .
+
+
+
+###  http://www.semanticweb.org/apple/ontologies/2015/8/untitled-ontology-16#LightAir
+
+:LightAir rdf:type owl:Class ;
+          
+          owl:equivalentClass [ rdf:type owl:Class ;
+                                owl:intersectionOf ( :Wind
+                                                     [ rdf:type owl:Restriction ;
+                                                       owl:onProperty :hasWindSpeedValue ;
+                                                       owl:qualifiedCardinality "1"^^xsd:nonNegativeInteger ;
+                                                       owl:onDataRange [ rdf:type rdfs:Datatype ;
+                                                                         owl:intersectionOf ( [ rdf:type rdfs:Datatype ;
+                                                                                                owl:onDatatype xsd:float ;
+                                                                                                owl:withRestrictions ( [ xsd:minInclusive "1.1"^^xsd:float
+                                                                                                                       ]
+                                                                                                                     )
+                                                                                              ]
+                                                                                              [ rdf:type rdfs:Datatype ;
+                                                                                                owl:onDatatype xsd:float ;
+                                                                                                owl:withRestrictions ( [ xsd:maxExclusive "5.5"^^xsd:float
+                                                                                                                       ]
+                                                                                                                     )
+                                                                                              ]
+                                                                                            )
+                                                                       ]
+                                                     ]
+                                                   )
+                              ] .
+
+
+
+###  http://www.semanticweb.org/apple/ontologies/2015/8/untitled-ontology-16#LightBreeze
+
+:LightBreeze rdf:type owl:Class ;
+             
+             owl:equivalentClass [ rdf:type owl:Class ;
+                                   owl:intersectionOf ( :Wind
+                                                        [ rdf:type owl:Restriction ;
+                                                          owl:onProperty :hasWindSpeedValue ;
+                                                          owl:qualifiedCardinality "1"^^xsd:nonNegativeInteger ;
+                                                          owl:onDataRange [ rdf:type rdfs:Datatype ;
+                                                                            owl:intersectionOf ( [ rdf:type rdfs:Datatype ;
+                                                                                                   owl:onDatatype xsd:float ;
+                                                                                                   owl:withRestrictions ( [ xsd:minInclusive "5.5"^^xsd:float
+                                                                                                                          ]
+                                                                                                                        )
+                                                                                                 ]
+                                                                                                 [ rdf:type rdfs:Datatype ;
+                                                                                                   owl:onDatatype xsd:float ;
+                                                                                                   owl:withRestrictions ( [ xsd:maxExclusive "11.9"^^xsd:float
+                                                                                                                          ]
+                                                                                                                        )
+                                                                                                 ]
+                                                                                               )
+                                                                          ]
+                                                        ]
+                                                      )
+                                 ] .
+
+
+
+###  http://www.semanticweb.org/apple/ontologies/2015/8/untitled-ontology-16#Meteorology
+
+:Meteorology rdf:type owl:Class ;
+             
+             rdfs:subClassOf [ rdf:type owl:Restriction ;
+                               owl:onProperty :hasWeatherType ;
+                               owl:onClass :WeatherType ;
+                               owl:qualifiedCardinality "1"^^xsd:nonNegativeInteger
+                             ] ,
+                             [ rdf:type owl:Restriction ;
+                               owl:onProperty :hasWind ;
+                               owl:onClass :Wind ;
+                               owl:qualifiedCardinality "1"^^xsd:nonNegativeInteger
+                             ] .
+
+
+
+###  http://www.semanticweb.org/apple/ontologies/2015/8/untitled-ontology-16#Moderate
+
+:Moderate rdf:type owl:Class ;
+          
+          owl:equivalentClass [ rdf:type owl:Class ;
+                                owl:intersectionOf ( :Air
+                                                     [ rdf:type owl:Restriction ;
+                                                       owl:onProperty :hasAQIValue ;
+                                                       owl:qualifiedCardinality "1"^^xsd:nonNegativeInteger ;
+                                                       owl:onDataRange [ rdf:type rdfs:Datatype ;
+                                                                         owl:intersectionOf ( [ rdf:type rdfs:Datatype ;
+                                                                                                owl:onDatatype xsd:int ;
+                                                                                                owl:withRestrictions ( [ xsd:minExclusive "50"^^xsd:int
+                                                                                                                       ]
+                                                                                                                     )
+                                                                                              ]
+                                                                                              [ rdf:type rdfs:Datatype ;
+                                                                                                owl:onDatatype xsd:int ;
+                                                                                                owl:withRestrictions ( [ xsd:maxInclusive "100"^^xsd:int
+                                                                                                                       ]
+                                                                                                                     )
+                                                                                              ]
+                                                                                            )
+                                                                       ]
+                                                     ]
+                                                   )
+                              ] .
+
+
+
+###  http://www.semanticweb.org/apple/ontologies/2015/8/untitled-ontology-16#ModerateBreeze
+
+:ModerateBreeze rdf:type owl:Class ;
+                
+                owl:equivalentClass [ rdf:type owl:Class ;
+                                      owl:intersectionOf ( :Wind
+                                                           [ rdf:type owl:Restriction ;
+                                                             owl:onProperty :hasWindSpeedValue ;
+                                                             owl:qualifiedCardinality "1"^^xsd:nonNegativeInteger ;
+                                                             owl:onDataRange [ rdf:type rdfs:Datatype ;
+                                                                               owl:intersectionOf ( [ rdf:type rdfs:Datatype ;
+                                                                                                      owl:onDatatype xsd:float ;
+                                                                                                      owl:withRestrictions ( [ xsd:minInclusive "19.7"^^xsd:float
+                                                                                                                             ]
+                                                                                                                           )
+                                                                                                    ]
+                                                                                                    [ rdf:type rdfs:Datatype ;
+                                                                                                      owl:onDatatype xsd:float ;
+                                                                                                      owl:withRestrictions ( [ xsd:maxExclusive "28.7"^^xsd:float
+                                                                                                                             ]
+                                                                                                                           )
+                                                                                                    ]
+                                                                                                  )
+                                                                             ]
+                                                           ]
+                                                         )
+                                    ] .
+
+
+
+###  http://www.semanticweb.org/apple/ontologies/2015/8/untitled-ontology-16#MorningRushHour
+
+:MorningRushHour rdf:type owl:Class ;
+                 
+                 owl:equivalentClass [ rdf:type owl:Class ;
+                                       owl:intersectionOf ( :HourOfDay
+                                                            [ rdf:type owl:Restriction ;
+                                                              owl:onProperty :hasHourValue ;
+                                                              owl:qualifiedCardinality "1"^^xsd:nonNegativeInteger ;
+                                                              owl:onDataRange [ rdf:type rdfs:Datatype ;
+                                                                                owl:intersectionOf ( [ rdf:type rdfs:Datatype ;
+                                                                                                       owl:onDatatype xsd:int ;
+                                                                                                       owl:withRestrictions ( [ xsd:minInclusive "7"^^xsd:int
+                                                                                                                              ]
+                                                                                                                            )
+                                                                                                     ]
+                                                                                                     [ rdf:type rdfs:Datatype ;
+                                                                                                       owl:onDatatype xsd:int ;
+                                                                                                       owl:withRestrictions ( [ xsd:maxExclusive "9"^^xsd:int
+                                                                                                                              ]
+                                                                                                                            )
+                                                                                                     ]
+                                                                                                   )
+                                                                              ]
+                                                            ]
+                                                          )
+                                     ] .
+
+
+
+###  http://www.semanticweb.org/apple/ontologies/2015/8/untitled-ontology-16#MostlyCloudy
+
+:MostlyCloudy rdf:type owl:Class ;
+              
+              owl:equivalentClass [ rdf:type owl:Class ;
+                                    owl:intersectionOf ( :WeatherType
+                                                         [ rdf:type owl:Restriction ;
+                                                           owl:onProperty :hasWeatherDescriptionValue ;
+                                                           owl:someValuesFrom [ rdf:type rdfs:Datatype ;
+                                                                                owl:oneOf [ rdf:type rdf:List ;
+                                                                                            rdf:first "Mostly Cloudy" ;
+                                                                                            rdf:rest rdf:nil
+                                                                                          ]
+                                                                              ]
+                                                         ]
+                                                       )
+                                  ] .
+
+
+
+###  http://www.semanticweb.org/apple/ontologies/2015/8/untitled-ontology-16#NoneRushHour
+
+:NoneRushHour rdf:type owl:Class ;
+              
+              owl:equivalentClass [ rdf:type owl:Class ;
+                                    owl:intersectionOf ( :HourOfDay
+                                                         [ rdf:type owl:Restriction ;
+                                                           owl:onProperty :hasHourValue ;
+                                                           owl:qualifiedCardinality "1"^^xsd:nonNegativeInteger ;
+                                                           owl:onDataRange [ rdf:type rdfs:Datatype ;
+                                                                             owl:unionOf ( [ rdf:type rdfs:Datatype ;
+                                                                                             owl:intersectionOf ( [ rdf:type rdfs:Datatype ;
+                                                                                                                    owl:onDatatype xsd:int ;
+                                                                                                                    owl:withRestrictions ( [ xsd:minInclusive "0"^^xsd:int
+                                                                                                                                           ]
+                                                                                                                                         )
+                                                                                                                  ]
+                                                                                                                  [ rdf:type rdfs:Datatype ;
+                                                                                                                    owl:onDatatype xsd:int ;
+                                                                                                                    owl:withRestrictions ( [ xsd:maxExclusive "7"^^xsd:int
+                                                                                                                                           ]
+                                                                                                                                         )
+                                                                                                                  ]
+                                                                                                                )
+                                                                                           ]
+                                                                                           [ rdf:type rdfs:Datatype ;
+                                                                                             owl:intersectionOf ( [ rdf:type rdfs:Datatype ;
+                                                                                                                    owl:onDatatype xsd:int ;
+                                                                                                                    owl:withRestrictions ( [ xsd:minInclusive "20"^^xsd:int
+                                                                                                                                           ]
+                                                                                                                                         )
+                                                                                                                  ]
+                                                                                                                  [ rdf:type rdfs:Datatype ;
+                                                                                                                    owl:onDatatype xsd:int ;
+                                                                                                                    owl:withRestrictions ( [ xsd:maxExclusive "24"^^xsd:int
+                                                                                                                                           ]
+                                                                                                                                         )
+                                                                                                                  ]
+                                                                                                                )
+                                                                                           ]
+                                                                                           [ rdf:type rdfs:Datatype ;
+                                                                                             owl:intersectionOf ( [ rdf:type rdfs:Datatype ;
+                                                                                                                    owl:onDatatype xsd:int ;
+                                                                                                                    owl:withRestrictions ( [ xsd:minInclusive "9"^^xsd:int
+                                                                                                                                           ]
+                                                                                                                                         )
+                                                                                                                  ]
+                                                                                                                  [ rdf:type rdfs:Datatype ;
+                                                                                                                    owl:onDatatype xsd:int ;
+                                                                                                                    owl:withRestrictions ( [ xsd:maxExclusive "17"^^xsd:int
+                                                                                                                                           ]
+                                                                                                                                         )
+                                                                                                                  ]
+                                                                                                                )
+                                                                                           ]
+                                                                                         )
+                                                                           ]
+                                                         ]
+                                                       )
+                                  ] .
+
+
+
+###  http://www.semanticweb.org/apple/ontologies/2015/8/untitled-ontology-16#Overcast
+
+:Overcast rdf:type owl:Class ;
+          
+          owl:equivalentClass [ rdf:type owl:Class ;
+                                owl:intersectionOf ( :WeatherType
+                                                     [ rdf:type owl:Restriction ;
+                                                       owl:onProperty :hasWeatherDescriptionValue ;
+                                                       owl:someValuesFrom [ rdf:type rdfs:Datatype ;
+                                                                            owl:oneOf [ rdf:type rdf:List ;
+                                                                                        rdf:first "Overcast" ;
+                                                                                        rdf:rest rdf:nil
+                                                                                      ]
+                                                                          ]
+                                                     ]
+                                                   )
+                              ] .
+
+
+
+###  http://www.semanticweb.org/apple/ontologies/2015/8/untitled-ontology-16#PartlyCloudy
+
+:PartlyCloudy rdf:type owl:Class ;
+              
+              owl:equivalentClass [ rdf:type owl:Class ;
+                                    owl:intersectionOf ( :WeatherType
+                                                         [ rdf:type owl:Restriction ;
+                                                           owl:onProperty :hasWeatherDescriptionValue ;
+                                                           owl:someValuesFrom [ rdf:type rdfs:Datatype ;
+                                                                                owl:oneOf [ rdf:type rdf:List ;
+                                                                                            rdf:first "Partly Cloudy" ;
+                                                                                            rdf:rest rdf:nil
+                                                                                          ]
+                                                                              ]
+                                                         ]
+                                                       )
+                                  ] .
+
+
+
+###  http://www.semanticweb.org/apple/ontologies/2015/8/untitled-ontology-16#Snapshot
+
+:Snapshot rdf:type owl:Class ;
+          
+          rdfs:subClassOf [ rdf:type owl:Restriction ;
+                            owl:onProperty :hasObservatedStation ;
+                            owl:onClass :Station ;
+                            owl:qualifiedCardinality "1"^^xsd:nonNegativeInteger
+                          ] ,
+                          [ rdf:type owl:Restriction ;
+                            owl:onProperty :hasDayOfWeek ;
+                            owl:onClass :DayOfWeek ;
+                            owl:qualifiedCardinality "1"^^xsd:nonNegativeInteger
+                          ] ,
+                          [ rdf:type owl:Restriction ;
+                            owl:onProperty :hasAir ;
+                            owl:onClass :Air ;
+                            owl:qualifiedCardinality "1"^^xsd:nonNegativeInteger
+                          ] ,
+                          [ rdf:type owl:Restriction ;
+                            owl:onProperty :hasHourOfDay ;
+                            owl:onClass :HourOfDay ;
+                            owl:qualifiedCardinality "1"^^xsd:nonNegativeInteger
+                          ] ,
+                          [ rdf:type owl:Restriction ;
+                            owl:onProperty :hasObservedTime ;
+                            owl:qualifiedCardinality "1"^^xsd:nonNegativeInteger ;
+                            owl:onDataRange xsd:dateTime
+                          ] ,
+                          [ rdf:type owl:Restriction ;
+                            owl:onProperty :hasMeteorology ;
+                            owl:onClass :Meteorology ;
+                            owl:qualifiedCardinality "1"^^xsd:nonNegativeInteger
+                          ] .
+
+
+
+###  http://www.semanticweb.org/apple/ontologies/2015/8/untitled-ontology-16#Station
+
+:Station rdf:type owl:Class ;
+         
+         rdfs:subClassOf [ rdf:type owl:Restriction ;
+                           owl:onProperty :hasNameValue ;
+                           owl:qualifiedCardinality "1"^^xsd:nonNegativeInteger ;
+                           owl:onDataRange xsd:string
+                         ] ,
+                         [ rdf:type owl:Restriction ;
+                           owl:onProperty :hasLonValue ;
+                           owl:qualifiedCardinality "1"^^xsd:nonNegativeInteger ;
+                           owl:onDataRange xsd:float
+                         ] ,
+                         [ rdf:type owl:Restriction ;
+                           owl:onProperty :hasArea ;
+                           owl:onClass :Area ;
+                           owl:qualifiedCardinality "1"^^xsd:nonNegativeInteger
+                         ] ,
+                         [ rdf:type owl:Restriction ;
+                           owl:onProperty :hasLatValue ;
+                           owl:qualifiedCardinality "1"^^xsd:nonNegativeInteger ;
+                           owl:onDataRange xsd:float
+                         ] .
+
+
+
+###  http://www.semanticweb.org/apple/ontologies/2015/8/untitled-ontology-16#Storm
+
+:Storm rdf:type owl:Class ;
+       
+       owl:equivalentClass [ rdf:type owl:Class ;
+                             owl:intersectionOf ( :Wind
+                                                  [ rdf:type owl:Restriction ;
+                                                    owl:onProperty :hasWindSpeedValue ;
+                                                    owl:qualifiedCardinality "1"^^xsd:nonNegativeInteger ;
+                                                    owl:onDataRange [ rdf:type rdfs:Datatype ;
+                                                                      owl:intersectionOf ( [ rdf:type rdfs:Datatype ;
+                                                                                             owl:onDatatype xsd:float ;
+                                                                                             owl:withRestrictions ( [ xsd:minInclusive "88.1"^^xsd:float
+                                                                                                                    ]
+                                                                                                                  )
+                                                                                           ]
+                                                                                           [ rdf:type rdfs:Datatype ;
+                                                                                             owl:onDatatype xsd:float ;
+                                                                                             owl:withRestrictions ( [ xsd:maxExclusive "102.4"^^xsd:float
+                                                                                                                    ]
+                                                                                                                  )
+                                                                                           ]
+                                                                                         )
+                                                                    ]
+                                                  ]
+                                                )
+                           ] .
+
+
+
+###  http://www.semanticweb.org/apple/ontologies/2015/8/untitled-ontology-16#StrongBreeze
+
+:StrongBreeze rdf:type owl:Class ;
+              
+              owl:equivalentClass [ rdf:type owl:Class ;
+                                    owl:intersectionOf ( :Wind
+                                                         [ rdf:type owl:Restriction ;
+                                                           owl:onProperty :hasWindSpeedValue ;
+                                                           owl:qualifiedCardinality "1"^^xsd:nonNegativeInteger ;
+                                                           owl:onDataRange [ rdf:type rdfs:Datatype ;
+                                                                             owl:intersectionOf ( [ rdf:type rdfs:Datatype ;
+                                                                                                    owl:onDatatype xsd:float ;
+                                                                                                    owl:withRestrictions ( [ xsd:minInclusive "38.8"^^xsd:float
+                                                                                                                           ]
+                                                                                                                         )
+                                                                                                  ]
+                                                                                                  [ rdf:type rdfs:Datatype ;
+                                                                                                    owl:onDatatype xsd:float ;
+                                                                                                    owl:withRestrictions ( [ xsd:maxExclusive "49.9"^^xsd:float
+                                                                                                                           ]
+                                                                                                                         )
+                                                                                                  ]
+                                                                                                )
+                                                                           ]
+                                                         ]
+                                                       )
+                                  ] .
+
+
+
+###  http://www.semanticweb.org/apple/ontologies/2015/8/untitled-ontology-16#StrongGale
+
+:StrongGale rdf:type owl:Class ;
+            
+            owl:equivalentClass [ rdf:type owl:Class ;
+                                  owl:intersectionOf ( :Wind
+                                                       [ rdf:type owl:Restriction ;
+                                                         owl:onProperty :hasWindSpeedValue ;
+                                                         owl:qualifiedCardinality "1"^^xsd:nonNegativeInteger ;
+                                                         owl:onDataRange [ rdf:type rdfs:Datatype ;
+                                                                           owl:intersectionOf ( [ rdf:type rdfs:Datatype ;
+                                                                                                  owl:onDatatype xsd:float ;
+                                                                                                  owl:withRestrictions ( [ xsd:minInclusive "74.6"^^xsd:float
+                                                                                                                         ]
+                                                                                                                       )
+                                                                                                ]
+                                                                                                [ rdf:type rdfs:Datatype ;
+                                                                                                  owl:onDatatype xsd:float ;
+                                                                                                  owl:withRestrictions ( [ xsd:maxExclusive "88.1"^^xsd:float
+                                                                                                                         ]
+                                                                                                                       )
+                                                                                                ]
+                                                                                              )
+                                                                         ]
+                                                       ]
+                                                     )
+                                ] .
+
+
+
+###  http://www.semanticweb.org/apple/ontologies/2015/8/untitled-ontology-16#Unhealthy
+
+:Unhealthy rdf:type owl:Class ;
+           
+           owl:equivalentClass [ rdf:type owl:Class ;
+                                 owl:intersectionOf ( :Air
+                                                      [ rdf:type owl:Restriction ;
+                                                        owl:onProperty :hasAQIValue ;
+                                                        owl:qualifiedCardinality "1"^^xsd:nonNegativeInteger ;
+                                                        owl:onDataRange [ rdf:type rdfs:Datatype ;
+                                                                          owl:intersectionOf ( [ rdf:type rdfs:Datatype ;
+                                                                                                 owl:onDatatype xsd:int ;
+                                                                                                 owl:withRestrictions ( [ xsd:minExclusive "100"^^xsd:int
+                                                                                                                        ]
+                                                                                                                      )
+                                                                                               ]
+                                                                                               [ rdf:type rdfs:Datatype ;
+                                                                                                 owl:onDatatype xsd:int ;
+                                                                                                 owl:withRestrictions ( [ xsd:maxInclusive "150"^^xsd:int
+                                                                                                                        ]
+                                                                                                                      )
+                                                                                               ]
+                                                                                             )
+                                                                        ]
+                                                      ]
+                                                    )
+                               ] .
+
+
+
+###  http://www.semanticweb.org/apple/ontologies/2015/8/untitled-ontology-16#Veryunhealthy
+
+:Veryunhealthy rdf:type owl:Class ;
+               
+               owl:equivalentClass [ rdf:type owl:Class ;
+                                     owl:intersectionOf ( :Air
+                                                          [ rdf:type owl:Restriction ;
+                                                            owl:onProperty :hasAQIValue ;
+                                                            owl:qualifiedCardinality "1"^^xsd:nonNegativeInteger ;
+                                                            owl:onDataRange [ rdf:type rdfs:Datatype ;
+                                                                              owl:intersectionOf ( [ rdf:type rdfs:Datatype ;
+                                                                                                     owl:onDatatype xsd:int ;
+                                                                                                     owl:withRestrictions ( [ xsd:minExclusive "150"^^xsd:int
+                                                                                                                            ]
+                                                                                                                          )
+                                                                                                   ]
+                                                                                                   [ rdf:type rdfs:Datatype ;
+                                                                                                     owl:onDatatype xsd:int ;
+                                                                                                     owl:withRestrictions ( [ xsd:maxInclusive "200"^^xsd:int
+                                                                                                                            ]
+                                                                                                                          )
+                                                                                                   ]
+                                                                                                 )
+                                                                            ]
+                                                          ]
+                                                        )
+                                   ] .
+
+
+
+###  http://www.semanticweb.org/apple/ontologies/2015/8/untitled-ontology-16#ViolentStorm
+
+:ViolentStorm rdf:type owl:Class ;
+              
+              owl:equivalentClass [ rdf:type owl:Class ;
+                                    owl:intersectionOf ( :Wind
+                                                         [ rdf:type owl:Restriction ;
+                                                           owl:onProperty :hasWindSpeedValue ;
+                                                           owl:qualifiedCardinality "1"^^xsd:nonNegativeInteger ;
+                                                           owl:onDataRange [ rdf:type rdfs:Datatype ;
+                                                                             owl:intersectionOf ( [ rdf:type rdfs:Datatype ;
+                                                                                                    owl:onDatatype xsd:float ;
+                                                                                                    owl:withRestrictions ( [ xsd:minInclusive "102.4"^^xsd:float
+                                                                                                                           ]
+                                                                                                                         )
+                                                                                                  ]
+                                                                                                  [ rdf:type rdfs:Datatype ;
+                                                                                                    owl:onDatatype xsd:float ;
+                                                                                                    owl:withRestrictions ( [ xsd:maxExclusive "117.4"^^xsd:float
+                                                                                                                           ]
+                                                                                                                         )
+                                                                                                  ]
+                                                                                                )
+                                                                           ]
+                                                         ]
+                                                       )
+                                  ] .
+
+
+
+###  http://www.semanticweb.org/apple/ontologies/2015/8/untitled-ontology-16#WeatherType
+
+:WeatherType rdf:type owl:Class ;
+             
+             rdfs:subClassOf [ rdf:type owl:Restriction ;
+                               owl:onProperty :hasWeatherDescriptionValue ;
+                               owl:someValuesFrom xsd:string
+                             ] .
+
+
+
+###  http://www.semanticweb.org/apple/ontologies/2015/8/untitled-ontology-16#WeekDay
+
+:WeekDay rdf:type owl:Class ;
+         
+         owl:equivalentClass [ rdf:type owl:Class ;
+                               owl:intersectionOf ( :DayOfWeek
+                                                    [ rdf:type owl:Restriction ;
+                                                      owl:onProperty :hasDayValue ;
+                                                      owl:qualifiedCardinality "1"^^xsd:nonNegativeInteger ;
+                                                      owl:onDataRange [ rdf:type rdfs:Datatype ;
+                                                                        owl:intersectionOf ( [ rdf:type rdfs:Datatype ;
+                                                                                               owl:onDatatype xsd:int ;
+                                                                                               owl:withRestrictions ( [ xsd:minInclusive "2"^^xsd:int
+                                                                                                                      ]
+                                                                                                                    )
+                                                                                             ]
+                                                                                             [ rdf:type rdfs:Datatype ;
+                                                                                               owl:onDatatype xsd:int ;
+                                                                                               owl:withRestrictions ( [ xsd:maxInclusive "6"^^xsd:int
+                                                                                                                      ]
+                                                                                                                    )
+                                                                                             ]
+                                                                                           )
+                                                                      ]
+                                                    ]
+                                                  )
+                             ] .
+
+
+
+###  http://www.semanticweb.org/apple/ontologies/2015/8/untitled-ontology-16#WeekEnd
+
+:WeekEnd rdf:type owl:Class ;
+         
+         owl:equivalentClass [ rdf:type owl:Class ;
+                               owl:intersectionOf ( :DayOfWeek
+                                                    [ rdf:type owl:Restriction ;
+                                                      owl:onProperty :hasDayValue ;
+                                                      owl:qualifiedCardinality "1"^^xsd:nonNegativeInteger ;
+                                                      owl:onDataRange [ rdf:type rdfs:Datatype ;
+                                                                        owl:unionOf ( [ rdf:type rdfs:Datatype ;
+                                                                                        owl:onDatatype xsd:int ;
+                                                                                        owl:withRestrictions ( [ xsd:minInclusive "7"^^xsd:int
+                                                                                                               ]
+                                                                                                             )
+                                                                                      ]
+                                                                                      [ rdf:type rdfs:Datatype ;
+                                                                                        owl:onDatatype xsd:int ;
+                                                                                        owl:withRestrictions ( [ xsd:maxInclusive "1"^^xsd:int
+                                                                                                               ]
+                                                                                                             )
+                                                                                      ]
+                                                                                    )
+                                                                      ]
+                                                    ]
+                                                  )
+                             ] .
+
+
+
+###  http://www.semanticweb.org/apple/ontologies/2015/8/untitled-ontology-16#Wind
+
+:Wind rdf:type owl:Class ;
+      
+      owl:equivalentClass [ rdf:type owl:Class ;
+                            owl:intersectionOf ( [ rdf:type owl:Restriction ;
+                                                   owl:onProperty :hasWindDirectionValue ;
+                                                   owl:qualifiedCardinality "1"^^xsd:nonNegativeInteger ;
+                                                   owl:onDataRange xsd:int
+                                                 ]
+                                                 [ rdf:type owl:Restriction ;
+                                                   owl:onProperty :hasWindSpeedValue ;
+                                                   owl:qualifiedCardinality "1"^^xsd:nonNegativeInteger ;
+                                                   owl:onDataRange xsd:float
+                                                 ]
+                                               )
+                          ] .
+
+
+
+###  http://www.semanticweb.org/apple/ontologies/2015/8/untitled-ontology-16#Windy
+
+:Windy rdf:type owl:Class ;
+       
+       owl:equivalentClass [ rdf:type owl:Class ;
+                             owl:intersectionOf ( :WeatherType
+                                                  [ rdf:type owl:Restriction ;
+                                                    owl:onProperty :hasWeatherDescriptionValue ;
+                                                    owl:someValuesFrom [ rdf:type rdfs:Datatype ;
+                                                                         owl:oneOf [ rdf:type rdf:List ;
+                                                                                     rdf:first "Windy" ;
+                                                                                     rdf:rest rdf:nil
+                                                                                   ]
+                                                                       ]
+                                                  ]
+                                                )
+                           ] .
+
+
+
+
+
+#################################################################
+#
+#    Individuals
+#
+#################################################################
+
+
+###  http://www.semanticweb.org/apple/ontologies/2015/8/untitled-ontology-16#Changping
+
+:Changping rdf:type :Area ,
+                    owl:NamedIndividual .
+
+
+
+###  http://www.semanticweb.org/apple/ontologies/2015/8/untitled-ontology-16#Chaoyang
+
+:Chaoyang rdf:type :Area ,
+                   owl:NamedIndividual .
+
+
+
+###  http://www.semanticweb.org/apple/ontologies/2015/8/untitled-ontology-16#Daxing
+
+:Daxing rdf:type :Area ,
+                 owl:NamedIndividual .
+
+
+
+###  http://www.semanticweb.org/apple/ontologies/2015/8/untitled-ontology-16#Fangshan
+
+:Fangshan rdf:type :Area ,
+                   owl:NamedIndividual .
+
+
+
+###  http://www.semanticweb.org/apple/ontologies/2015/8/untitled-ontology-16#Fengtai
+
+:Fengtai rdf:type :Area ,
+                  owl:NamedIndividual .
+
+
+
+###  http://www.semanticweb.org/apple/ontologies/2015/8/untitled-ontology-16#Friday
+
+:Friday rdf:type owl:NamedIndividual .
+
+
+
+###  http://www.semanticweb.org/apple/ontologies/2015/8/untitled-ontology-16#Haidian
+
+:Haidian rdf:type :Area ,
+                  owl:NamedIndividual .
+
+
+
+###  http://www.semanticweb.org/apple/ontologies/2015/8/untitled-ontology-16#Huairou
+
+:Huairou rdf:type :Area ,
+                  owl:NamedIndividual .
+
+
+
+###  http://www.semanticweb.org/apple/ontologies/2015/8/untitled-ontology-16#Mentougou
+
+:Mentougou rdf:type :Area ,
+                    owl:NamedIndividual .
+
+
+
+###  http://www.semanticweb.org/apple/ontologies/2015/8/untitled-ontology-16#Miyun
+
+:Miyun rdf:type :Area ,
+                owl:NamedIndividual .
+
+
+
+###  http://www.semanticweb.org/apple/ontologies/2015/8/untitled-ontology-16#Monday
+
+:Monday rdf:type owl:NamedIndividual .
+
+
+
+###  http://www.semanticweb.org/apple/ontologies/2015/8/untitled-ontology-16#Pinggu
+
+:Pinggu rdf:type :Area ,
+                 owl:NamedIndividual .
+
+
+
+###  http://www.semanticweb.org/apple/ontologies/2015/8/untitled-ontology-16#Saturday
+
+:Saturday rdf:type owl:NamedIndividual .
+
+
+
+###  http://www.semanticweb.org/apple/ontologies/2015/8/untitled-ontology-16#Shijingshan
+
+:Shijingshan rdf:type :Area ,
+                      owl:NamedIndividual .
+
+
+
+###  http://www.semanticweb.org/apple/ontologies/2015/8/untitled-ontology-16#Shunyi
+
+:Shunyi rdf:type :Area ,
+                 owl:NamedIndividual .
+
+
+
+###  http://www.semanticweb.org/apple/ontologies/2015/8/untitled-ontology-16#Sunday
+
+:Sunday rdf:type owl:NamedIndividual .
+
+
+
+###  http://www.semanticweb.org/apple/ontologies/2015/8/untitled-ontology-16#Thursday
+
+:Thursday rdf:type owl:NamedIndividual .
+
+
+
+###  http://www.semanticweb.org/apple/ontologies/2015/8/untitled-ontology-16#Tongzhou
+
+:Tongzhou rdf:type :Area ,
+                   owl:NamedIndividual .
+
+
+
+###  http://www.semanticweb.org/apple/ontologies/2015/8/untitled-ontology-16#Tuesday
+
+:Tuesday rdf:type owl:NamedIndividual .
+
+
+
+###  http://www.semanticweb.org/apple/ontologies/2015/8/untitled-ontology-16#Wednesday
+
+:Wednesday rdf:type owl:NamedIndividual .
+
+
+
+###  http://www.semanticweb.org/apple/ontologies/2015/8/untitled-ontology-16#Yanqing
+
+:Yanqing rdf:type :Area ,
+                  owl:NamedIndividual .
+
+
+
+
+###  Generated by the OWL API (version 3.5.1) http://owlapi.sourceforge.net
+
